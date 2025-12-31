@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="h1">Détail du CV</div>
+  <p class="sub" *ngIf="loading">Chargement...</p>
+
+  <div *ngIf="cv" class="profile">
+    <div class="left">
+
+      <!-- <div class="avatar">{{ (cv.full_name || 'CV').slice(0,2).toUpperCase() }}</div>
+      <div>
+        <div class="name">{{ cv.full_name || '—' }}</div>
+        <div class="meta">{{ cv.location || 'Localisation inconnue' }}</div>
+      </div>
+    </div> -->
+
+    <!-- <div class="right-actions">
+      <a class="btn secondary" routerLink="/cvs">Retour</a>
+    </div> -->
+    HANENNE Mohammed Mahmoud
+  </div>
+
+  <div class="hr"></div>
+
+  <div *ngIf="cv" class="grid">
+    <div class="box">
+      <div class="label">Email</div>
+      <div class="value">{{ cv.email || '—' }}</div>
+    </div>
+    <div class="box">
+      <div class="label">Téléphone</div>
+      <div class="value">{{ cv.phone || '—' }}</div>
+    </div>
+    <div class="box full">
+      <div class="label">Fichier</div>
+      <div class="value">{{ cv.filename }}</div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div *ngIf="cv">
+    <div class="h1" style="font-size:18px;">Compétences détectées</div>
+    <div class="chips" *ngIf="cv.skills.length; else noSkills">
+      <span class="chip" *ngFor="let s of cv.skills">{{ s }} </span>
+    </div>
+    <ng-template #noSkills>
+      <span class="badge warn">Aucune compétence détectée</span>
+    </ng-template>
+  </div>
+</div>

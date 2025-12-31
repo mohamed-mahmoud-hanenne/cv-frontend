@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="h1">CV enregistrés</div>
+  <p class="sub">Clique sur un CV pour voir les détails.</p>
+
+  <div class="toolbar">
+    <input class="search" type="text" placeholder="Rechercher par nom ou email..." [(ngModel)]="q" />
+    <a class="btn secondary" routerLink="/upload">+ Upload</a>
+  </div>
+
+  <p class="small" *ngIf="loading">Chargement...</p>
+
+  <div class="table-wrap" *ngIf="!loading">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fichier</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of filtered()">
+          <td class="mono">{{ c.id }}</td>
+          <td>{{ c.filename }}</td>
+          <td>{{ c.full_name || '—' }}</td>
+          <td>{{ c.email || '—' }}</td>
+          <td class="right">
+            <a class="btn" [routerLink]="['/cvs', c.id]">Voir</a>
+          </td>
+        </tr>
+
+        <tr *ngIf="filtered().length === 0">
+          <td colspan="5">
+            <span class="badge warn">Aucun résultat</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

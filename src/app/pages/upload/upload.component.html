@@ -1,0 +1,65 @@
+<div class="card">
+  <div class="h1">Upload d’un CV</div>
+  <p class="sub">PDF ou DOCX → extraction (nom, email, téléphone, localisation, skills).</p>
+
+  <div class="uploader">
+    <label class="drop">
+      <input type="file" (change)="onFileChange($event)" accept=".pdf,.docx" />
+      <div class="drop-inner">
+        <div class="drop-title">Glisse ton fichier ici</div>
+        
+      </div>
+    </label>
+    <br><br>
+    <div class="actions">
+      <button class="btn" (click)="upload()" [disabled]="!file || loading">
+        {{ loading ? 'Analyse...' : 'Analyser' }}
+      </button>
+      <a class="btn secondary" routerLink="/cvs">Voir la liste</a>
+    </div>
+
+    <div class="hint" *ngIf="file">
+      <span class="badge ok">Fichier</span>
+      <span class="small">{{ file.name }}</span>
+    </div>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </div>
+</div>
+
+<div class="card" *ngIf="result">
+  <div class="h1">Résultat</div>
+
+  <div class="grid">
+    <div class="kv">
+      <div class="k">Nom</div>
+      <div class="v">{{ result.full_name || '—' }}</div>
+    </div>
+    <div class="kv">
+      <div class="k">Email</div>
+      <div class="v">{{ result.email || '—' }}</div>
+    </div>
+    <div class="kv">
+      <div class="k">Téléphone</div>
+      <div class="v">{{ result.phone || '—' }}</div>
+    </div>
+    <div class="kv">
+      <div class="k">Localisation</div>
+      <div class="v">{{ result.location || '—' }}</div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="h1" style="font-size:18px;">Compétences</div>
+  <div class="chips" *ngIf="result.skills.length; else emptySkills">
+    <span class="chip" *ngFor="let s of result.skills">{{ s }}</span>
+  </div>
+  <ng-template #emptySkills>
+    <span class="badge warn">Aucune compétence détectée</span>
+  </ng-template>
+
+  <div class="hr"></div>
+
+  <a class="btn" [routerLink]="['/cvs', result.id]">Voir détails</a>
+</div>
