@@ -64,3 +64,14 @@ ng serve
 
 👉 Application disponible sur :
 http://localhost:4200
+
+## Démo
+
+1.interface upload CV
+<img width="1366" height="768" alt="interface-upload" src="https://github.com/user-attachments/assets/d3f3a359-f6fe-45c2-8868-997fda7c5454" />
+
+2.listes cvs
+<img width="1366" height="768" alt="list-cvs" src="https://github.com/user-attachments/assets/34f776c1-466c-4f33-8825-d7b5ec8faeae" />
+
+3. Cv par id
+<img width="1366" height="768" alt="cv-by-id" src="https://github.com/user-attachments/assets/b1a1fb61-3451-4df2-971b-3687c615c46f" />
