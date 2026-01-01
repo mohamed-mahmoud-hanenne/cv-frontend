@@ -68,10 +68,14 @@ http://localhost:4200
 ## Démo
 
 1.interface upload CV
-<img width="1366" height="768" alt="interface-upload" src="https://github.com/user-attachments/assets/d3f3a359-f6fe-45c2-8868-997fda7c5454" />
+<img width="1366" height="685" alt="interface-upload" src="https://github.com/user-attachments/assets/b82d4136-f6bb-4777-9e5f-97b595820022" />
+
+<img width="1366" height="717" alt="upload" src="https://github.com/user-attachments/assets/01933444-60e5-4f9e-b454-66508b3d51d2" />
+
 
 2.listes cvs
-<img width="1366" height="768" alt="list-cvs" src="https://github.com/user-attachments/assets/34f776c1-466c-4f33-8825-d7b5ec8faeae" />
+<img width="1366" height="685" alt="list-cvs" src="https://github.com/user-attachments/assets/307a507b-2a16-4721-b933-d0b2242c58d6" />
+
 
 3. Cv par id
-<img width="1366" height="768" alt="cv-by-id" src="https://github.com/user-attachments/assets/b1a1fb61-3451-4df2-971b-3687c615c46f" />
+<img width="1366" height="669" alt="cv-by-id" src="https://github.com/user-attachments/assets/26605b61-4db0-4b18-ae9b-51f812420338" />
